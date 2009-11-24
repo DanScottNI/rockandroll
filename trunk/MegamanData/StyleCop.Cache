@@ -1,0 +1,123 @@
+<stylecopresultscache>
+  <version>10</version>
+  <sourcecode name="MusicOpcodeFormat.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>08/24/2008 22:25:34</timestamp>
+      <milliseconds>191</milliseconds>
+    </settings>
+    <timestamp>08/24/2008 22:39:23</timestamp>
+    <milliseconds>863</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="MusicDisassemble.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>08/24/2008 22:25:34</timestamp>
+      <milliseconds>191</milliseconds>
+    </settings>
+    <timestamp>08/25/2008 12:25:30</timestamp>
+    <milliseconds>125</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="73878346">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="EnemyStatistics.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>08/24/2008 19:37:27</timestamp>
+    <milliseconds>363</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Enemy.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>08/24/2008 19:36:46</timestamp>
+    <milliseconds>519</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ObjectType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>03/01/2009 17:15:13</timestamp>
+    <milliseconds>812</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="SoundEffect.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>03/01/2009 16:51:12</timestamp>
+    <milliseconds>468</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="SpecObj.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>08/24/2008 19:30:27</timestamp>
+    <milliseconds>863</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Statistics.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>08/24/2008 19:32:05</timestamp>
+    <milliseconds>113</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Level.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>10/30/2009 18:47:45</timestamp>
+    <milliseconds>421</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Megaman2ROM.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>10/30/2009 18:47:45</timestamp>
+    <milliseconds>531</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="MegamanROM.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>10/30/2009 18:40:26</timestamp>
+    <milliseconds>15</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="PatternTableSettings.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>10/05/2008 14:34:35</timestamp>
+    <milliseconds>968</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/11/2009 22:43:38</timestamp>
+      <milliseconds>718</milliseconds>
+    </settings>
+    <timestamp>08/10/2008 20:04:00</timestamp>
+    <milliseconds>488</milliseconds>
+    <violations />
+  </sourcecode>
+</stylecopresultscache>

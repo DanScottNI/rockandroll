@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F09E22BF-1E77-47A6-A6F1-E022902EF6C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RockAndRoll</RootNamespace>
+    <AssemblyName>RockAndRoll</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>prog.ico</ApplicationIcon>
+    <TargetFrameworkSubset>Client</TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationConfig.cs" />
+    <Compile Include="ApplicationEnums.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackupManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackupManagement.Designer.cs">
+      <DependentUpon>frmBackupManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDistribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDistribution.Designer.cs">
+      <DependentUpon>frmDistribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnemyManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnemyManagement.Designer.cs">
+      <DependentUpon>frmEnemyManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnemyProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnemyProperties.Designer.cs">
+      <DependentUpon>frmEnemyProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnemyStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnemyStatistics.Designer.cs">
+      <DependentUpon>frmEnemyStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFileProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileProperties.Designer.cs">
+      <DependentUpon>frmFileProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGoToLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGoToLevel.Designer.cs">
+      <DependentUpon>frmGoToLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLevelProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLevelProperties.Designer.cs">
+      <DependentUpon>frmLevelProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaletteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaletteEditor.Designer.cs">
+      <DependentUpon>frmPaletteEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatternTableSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatternTableSettings.Designer.cs">
+      <DependentUpon>frmPatternTableSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatternTableSettingsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatternTableSettingsEdit.Designer.cs">
+      <DependentUpon>frmPatternTableSettingsEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPreferences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPreferences.Designer.cs">
+      <DependentUpon>frmPreferences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoomOrderEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoomOrderEditor.Designer.cs">
+      <DependentUpon>frmRoomOrderEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScrollEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScrollEditor.Designer.cs">
+      <DependentUpon>frmScrollEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScrollEditorSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScrollEditorSimple.Designer.cs">
+      <DependentUpon>frmScrollEditorSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSoundEffectsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSoundEffectsEditor.Designer.cs">
+      <DependentUpon>frmSoundEffectsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSpecialObjectProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpecialObjectProperties.Designer.cs">
+      <DependentUpon>frmSpecialObjectProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSpriteChangeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpriteChangeEditor.Designer.cs">
+      <DependentUpon>frmSpriteChangeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatistics.Designer.cs">
+      <DependentUpon>frmStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTileEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTileEditor.Designer.cs">
+      <DependentUpon>frmTileEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTSAEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTSAEditor.Designer.cs">
+      <DependentUpon>frmTSAEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFileProperties.resx">
+      <DependentUpon>frmFileProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaletteEditor.resx">
+      <DependentUpon>frmPaletteEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPreferences.resx">
+      <DependentUpon>frmPreferences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoomOrderEditor.resx">
+      <DependentUpon>frmRoomOrderEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTSAEditor.resx">
+      <DependentUpon>frmTSAEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\Megaman\data.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\enemy.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\Mega Man %28E%29 %28!%29.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\Mega Man %28U%29.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\BMFFINR3.PAL">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\FCEUltra.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\G-NES.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\JNES.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\k0rn.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\KHorton.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\koitsu.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\Loopynes.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\matrx21f.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\Nessie.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\NESTICLE.PAL">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\Nestopia.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\Nintendulator%28NTSC%29.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\Nintendulator%28PAL%29.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\Nofrendo.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\olafNES.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\RealityC.PAL">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\RockNES.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Palettes\VirtuaNES.pal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\Rockman %28J%29.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\se.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\stages.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\tsaset.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="prog.ico" />
+    <Content Include="Resources\Megaman\chk1-2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\chk1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\chk2-2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\chk2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\00.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\01.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\02.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\03.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\04.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\05.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\06.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\07.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\08.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\09.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\0a.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\0b.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\0c.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\0d.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\0f.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\10.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\12.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\13.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\14.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\15.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\16.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\17.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\18.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\19.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\1c.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\21.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\22.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\23.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\24.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\25.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\2f.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\31.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\3d.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\3e.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\3f.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\40.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\41.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\42.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Megaman\EnemyGFX\45.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\eu.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\japan.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Numbers.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\us.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Nini\Source\Nini.csproj">
+      <Project>{9B920C90-08EF-4123-A6B7-5F25CF0F94EC}</Project>
+      <Name>Nini</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ROMHackLib\ROMHackLib.csproj">
+      <Project>{A4137869-2359-4333-8C43-3879E03BF63F}</Project>
+      <Name>ROMHackLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MegamanData\MegamanData.csproj">
+      <Project>{5E3EDA6A-C1D5-42FE-A223-354A72A6D073}</Project>
+      <Name>MegamanData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
