@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MegamanData.Megaman2.Level">
+    <Position X="3" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACgoEAIgAQAAQAUAAAARgAgAgAGAAAABAAAAAAAA=</HashCode>
+      <FileName>Megaman2\Level.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MegamanData.Megaman2.Megaman2ROM">
+    <Position X="5.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Megaman2\Megaman2ROM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MegamanData.Megaman2.PatternTableSettings">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABACAAAAAAAEAAAAAAAAAAAAACAIACAAABAAAAAAA=</HashCode>
+      <FileName>Megaman2\PatternTableSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
