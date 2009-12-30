@@ -489,103 +489,98 @@ namespace MegamanData.Megaman
         {
             byte tileID;
 
-            Graphics g = Graphics.FromImage(screenBitmap);
-            g.Clear(Color.Black);
-
-            System.Drawing.Rectangle sourceRectangle = new Rectangle(0, 0, 32, 32);
-
-            for (int i = 0; i < 8; i++)
+            using (Graphics g = Graphics.FromImage(screenBitmap))
             {
-                for (int x = 0; x < 8; x++)
-                {
-                    tileID = this.CurrentLevel.GetLevelData(screenIndex, x, i);
+                g.Clear(Color.Black);
 
-                    if (this.tilesDrawn[tileID] == false)
+                System.Drawing.Rectangle sourceRectangle = new Rectangle(0, 0, 32, 32);
+
+                for (int i = 0; i < 8; i++)
+                {
+                    for (int x = 0; x < 8; x++)
                     {
-                        this.DrawLevelTile(tileID);
+                        tileID = this.CurrentLevel.GetLevelData(screenIndex, x, i);
+
+                        if (this.tilesDrawn[tileID] == false)
+                        {
+                            this.DrawLevelTile(tileID);
+                        }
+
+                        sourceRectangle.X = tileID * 32;
+                        this.levelTiles.DrawBitmap(ref screenBitmap, sourceRectangle, new Rectangle(i * 32, x * 32, 32, 32));
+                    }
+                }
+
+                if (drawObjects)
+                {
+                    // Now render any enemies that are on this screen.
+                    List<Enemy> screenEnemies = this.CurrentLevel.Enemies.Where(e => e.ScreenID == screenIndex).ToList();
+
+                    // Keep a count of the number of enemies rendered.
+                    int totalRendered = 0;
+
+                    foreach (Enemy enemy in screenEnemies)
+                    {
+                        g.FillRectangle(new SolidBrush(enemyColour), new Rectangle(enemy.X, enemy.Y, 16, 16));
+                        string enemyHex = enemy.ID.ToHex().ToUpper();
+                        byte[] enemyIDArr = enemyHex.ToByteArray();
+
+                        string enemyIndex = totalRendered.ToHex().ToUpper();
+                        byte[] enemyIndexArr = enemyIndex.ToByteArray();
+
+                        // Render the ID of the 
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((enemyIDArr[0] - 48) * 8, 0, 8, 8), new Rectangle(enemy.X, enemy.Y, 8, 8));
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((enemyIDArr[1] - 48) * 8, 0, 8, 8), new Rectangle(enemy.X + 8, enemy.Y, 8, 8));
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((enemyIndexArr[1] - 48) * 8, 0, 8, 8), new Rectangle(enemy.X, enemy.Y + 8, 8, 8));
+
+                        totalRendered++;
                     }
 
-                    sourceRectangle.X = tileID * 32;
-                    this.levelTiles.DrawBitmap(ref screenBitmap, sourceRectangle, new Rectangle(i * 32, x * 32, 32, 32));
+                    // Now, render the special objects that are on this screen.
+                    List<SpecialObject> screenObjects = this.CurrentLevel.SpecialObjects.Where(s => s.ScreenID == screenIndex).ToList();
+
+                    totalRendered = 0;
+
+                    foreach (SpecialObject obj in screenObjects)
+                    {
+                        g.DrawRectangle(new Pen(specialObjColour), new Rectangle(obj.X1, obj.Y1, obj.Width, obj.Height));
+
+                        // Create the ID.
+                        string objHex = ((int)obj.ID).ToHex().ToUpper();
+                        byte[] objIDArray = objHex.ToByteArray();
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((objIDArray[0] - 48) * 8, 0, 8, 8), new Rectangle(obj.X1, obj.Y1, 8, 8));
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((objIDArray[1] - 48) * 8, 0, 8, 8), new Rectangle(obj.X1 + 8, obj.Y1, 8, 8));
+                    }
+
+                    if (rom[CurrentLevel.ScreenStartCheck1Offset] == screenIndex)
+                    {
+                        byte[] idarray = "B1".ToByteArray();
+                        g.FillRectangle(new SolidBrush(beamdownColour), new Rectangle(128, CurrentLevel.BeamDown1Coord, 16, 16));
+
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[0] - 48) * 8, 0, 8, 8), new Rectangle(128, CurrentLevel.BeamDown1Coord, 8, 8));
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[1] - 48) * 8, 0, 8, 8), new Rectangle(128 + 8, CurrentLevel.BeamDown1Coord, 8, 8));
+                    }
+
+                    if (rom[CurrentLevel.ScreenStartCheck2Offset] == screenIndex)
+                    {
+                        byte[] idarray = "B2".ToByteArray();
+                        g.FillRectangle(new SolidBrush(beamdownColour), new Rectangle(128, CurrentLevel.BeamDown2Coord, 16, 16));
+
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[0] - 48) * 8, 0, 8, 8), new Rectangle(128, CurrentLevel.BeamDown2Coord, 8, 8));
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[1] - 48) * 8, 0, 8, 8), new Rectangle(128 + 8, CurrentLevel.BeamDown2Coord, 8, 8));
+                    }
+
+                    if (rom[CurrentLevel.ScreenStartCheck3Offset] == screenIndex)
+                    {
+                        byte[] idarray = "B3".ToByteArray();
+
+                        g.FillRectangle(new SolidBrush(beamdownColour), new Rectangle(128, CurrentLevel.BeamDown3Coord, 16, 16));
+
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[0] - 48) * 8, 0, 8, 8), new Rectangle(128, CurrentLevel.BeamDown3Coord, 8, 8));
+                        this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[1] - 48) * 8, 0, 8, 8), new Rectangle(128 + 8, CurrentLevel.BeamDown3Coord, 8, 8));
+                    }
                 }
             }
-
-            if (drawObjects)
-            {
-                // Now render any enemies that are on this screen.
-                List<Enemy> screenEnemies = this.CurrentLevel.Enemies.Where(delegate(Enemy e)
-                {
-                    return e.ScreenID == screenIndex;
-                }).ToList();
-
-                // Keep a count of the number of enemies rendered.
-                int totalRendered = 0;
-
-                foreach (Enemy enemy in screenEnemies)
-                {
-                    g.FillRectangle(new SolidBrush(enemyColour), new Rectangle(enemy.X, enemy.Y, 16, 16));
-                    string enemyHex = enemy.ID.ToHex().ToUpper();
-                    byte[] enemyIDArr = enemyHex.ToByteArray();
-
-                    string enemyIndex = totalRendered.ToHex().ToUpper();
-                    byte[] enemyIndexArr = enemyIndex.ToByteArray();
-
-                    // Render the ID of the 
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((enemyIDArr[0] - 48) * 8, 0, 8, 8), new Rectangle(enemy.X, enemy.Y, 8, 8));
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((enemyIDArr[1] - 48) * 8, 0, 8, 8), new Rectangle(enemy.X + 8, enemy.Y, 8, 8));
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((enemyIndexArr[1] - 48) * 8, 0, 8, 8), new Rectangle(enemy.X, enemy.Y + 8, 8, 8));
-
-                    totalRendered++;
-                }
-
-                // Now, render the special objects that are on this screen.
-                List<SpecialObject> screenObjects = this.CurrentLevel.SpecialObjects.Where(delegate(SpecialObject s)
-                {
-                    return s.ScreenID == screenIndex;
-                }).ToList();
-
-                totalRendered = 0;
-
-                foreach (SpecialObject obj in screenObjects)
-                {
-                    g.DrawRectangle(new Pen(specialObjColour), new Rectangle(obj.X1, obj.Y1, obj.Width, obj.Height));
-
-                    // Create the ID.
-                    string objHex = ((int)obj.ID).ToHex().ToUpper();
-                    byte[] objIDArray = objHex.ToByteArray();
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((objIDArray[0] - 48) * 8, 0, 8, 8), new Rectangle(obj.X1, obj.Y1, 8, 8));
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((objIDArray[1] - 48) * 8, 0, 8, 8), new Rectangle(obj.X1 + 8, obj.Y1, 8, 8));
-                }
-
-                if (rom[CurrentLevel.ScreenStartCheck1Offset] == screenIndex)
-                {
-                    byte[] idarray = "B1".ToByteArray();
-                    g.FillRectangle(new SolidBrush(beamdownColour), new Rectangle(128, CurrentLevel.BeamDown1Coord, 16, 16));
-
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[0] - 48) * 8, 0, 8, 8), new Rectangle(128, CurrentLevel.BeamDown1Coord, 8, 8));
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[1] - 48) * 8, 0, 8, 8), new Rectangle(128 + 8, CurrentLevel.BeamDown1Coord, 8, 8));
-                }
-
-                if (rom[CurrentLevel.ScreenStartCheck2Offset] == screenIndex)
-                {
-                    byte[] idarray = "B2".ToByteArray();
-                    g.FillRectangle(new SolidBrush(beamdownColour), new Rectangle(128, CurrentLevel.BeamDown2Coord, 16, 16));
-
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[0] - 48) * 8, 0, 8, 8), new Rectangle(128, CurrentLevel.BeamDown2Coord, 8, 8));
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[1] - 48) * 8, 0, 8, 8), new Rectangle(128 + 8, CurrentLevel.BeamDown2Coord, 8, 8));
-                }
-
-                if (rom[CurrentLevel.ScreenStartCheck3Offset] == screenIndex)
-                {
-                    byte[] idarray = "B3".ToByteArray();
-
-                    g.FillRectangle(new SolidBrush(beamdownColour), new Rectangle(128, CurrentLevel.BeamDown3Coord, 16, 16));
-
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[0] - 48) * 8, 0, 8, 8), new Rectangle(128, CurrentLevel.BeamDown3Coord, 8, 8));
-                    this.fontBitmap.DrawBitmap(ref screenBitmap, new Rectangle((idarray[1] - 48) * 8, 0, 8, 8), new Rectangle(128 + 8, CurrentLevel.BeamDown3Coord, 8, 8));
-                }
-            }
-            g.Dispose();
         }
 
         /// <summary>
