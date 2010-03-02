@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Text;
+using MegamanData.Megaman.Graphics;
+using MegamanData.Megaman.Levels;
 using ROMHackLib.NES;
 
-namespace MegamanData.Megaman
+namespace MegamanData.Megaman.Levels
 {
     /// <summary>
     /// Represents a level in Mega Man.
@@ -266,7 +268,7 @@ namespace MegamanData.Megaman
         /// <summary>
         /// Gets or sets the enemies that this level uses.
         /// </summary>
-        public Collection<Enemy> Enemies { get; set; }
+        public Collection<MegamanData.Megaman.Enemies.Enemy> Enemies { get; set; }
 
         /// <summary>
         /// Gets or sets the special objects that are contained within this level.

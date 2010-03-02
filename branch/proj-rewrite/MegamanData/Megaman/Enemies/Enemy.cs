@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MegamanData.Megaman
+namespace MegamanData.Megaman.Enemies
 {
     /// <summary>
     /// Class that represents an enemy in Mega Man.

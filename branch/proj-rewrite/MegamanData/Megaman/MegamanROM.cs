@@ -4,6 +4,9 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using MegamanData.Megaman.Enemies;
+using MegamanData.Megaman.Graphics;
+using MegamanData.Megaman.Levels;
 using Nini.Config;
 using ROMHackLib;
 using ROMHackLib.Graphics.NES;
@@ -91,12 +94,12 @@ namespace MegamanData.Megaman
         /// <summary>
         /// Gets or sets a list of Mega Man levels.
         /// </summary>
-        public Collection<Level> Levels { get; set; }
+        public Collection<MegamanData.Megaman.Levels.Level> Levels { get; set; }
 
         /// <summary>
         /// Gets or sets the current level.
         /// </summary>
-        public Level CurrentLevel { get; set; }
+        public MegamanData.Megaman.Levels.Level CurrentLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the  index of the current level.
@@ -355,7 +358,7 @@ namespace MegamanData.Megaman
             int numentries = 0, res = 0;
             PatternTableSettings pat;
 
-            foreach (Level lvl in this.Levels)
+            foreach (MegamanData.Megaman.Levels.Level lvl in this.Levels)
             {
                 lvl.PatternTableSetting = new Collection<PatternTableSettings>();
                 numentries = rom[lvl.PatternTableDataOffset];
@@ -489,7 +492,7 @@ namespace MegamanData.Megaman
         {
             byte tileID;
 
-            using (Graphics g = Graphics.FromImage(screenBitmap))
+            using (System.Drawing.Graphics g = System.Drawing.Graphics.FromImage(screenBitmap))
             {
                 g.Clear(Color.Black);
 
@@ -514,12 +517,12 @@ namespace MegamanData.Megaman
                 if (drawObjects)
                 {
                     // Now render any enemies that are on this screen.
-                    List<Enemy> screenEnemies = this.CurrentLevel.Enemies.Where(e => e.ScreenID == screenIndex).ToList();
+                    List<MegamanData.Megaman.Enemies.Enemy> screenEnemies = this.CurrentLevel.Enemies.Where(e => e.ScreenID == screenIndex).ToList();
 
                     // Keep a count of the number of enemies rendered.
                     int totalRendered = 0;
 
-                    foreach (Enemy enemy in screenEnemies)
+                    foreach (MegamanData.Megaman.Enemies.Enemy enemy in screenEnemies)
                     {
                         g.FillRectangle(new SolidBrush(enemyColour), new Rectangle(enemy.X, enemy.Y, 16, 16));
                         string enemyHex = enemy.ID.ToHex().ToUpper();
@@ -913,7 +916,7 @@ begin
         public int RetrieveTotalNumberEnemies()
         {
             int enemyamount = 0;
-            foreach (Level lvl in this.Levels)
+            foreach (MegamanData.Megaman.Levels.Level lvl in this.Levels)
             {
                 enemyamount += lvl.Enemies.Count;
             }
@@ -1021,7 +1024,7 @@ begin
                 return false;
             }
 
-            Enemy enemy = new Enemy();
+            MegamanData.Megaman.Enemies.Enemy enemy = new MegamanData.Megaman.Enemies.Enemy();
             enemy.ScreenID = screenID;
             this.CurrentLevel.Enemies.Add(enemy);
             rom.IsChanged = true;
@@ -1099,7 +1102,7 @@ begin
         {
             byte solidity;
             Bitmap tempNumbers = new Bitmap(Path.Combine(this.assetDirectory, "numbers.bmp"));
-            Graphics g = Graphics.FromImage(bit);
+            System.Drawing.Graphics g = System.Drawing.Graphics.FromImage(bit);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
             for (int i = 0; i < 8; i++)
             {
@@ -1178,12 +1181,12 @@ begin
 
             if (this.Levels == null)
             {
-                this.Levels = new Collection<Level>();
+                this.Levels = new Collection<MegamanData.Megaman.Levels.Level>();
             }
 
             for (int i = 0; i < numberLevels; i++)
             {
-                Level lvl = new Level(ref rom);
+                MegamanData.Megaman.Levels.Level lvl = new MegamanData.Megaman.Levels.Level(ref rom);
                 IConfig col = ini.Configs["Level" + i];
                 lvl.TSAOffset = col.GetHex("TSA");
                 lvl.AttributeOffset = col.GetHex("Attribute");
@@ -1271,15 +1274,15 @@ begin
         private void LoadEnemyData()
         {
             int pos = 0;
-            Enemy enemy;
+            MegamanData.Megaman.Enemies.Enemy enemy;
 
-            foreach (Level lvl in this.Levels)
+            foreach (MegamanData.Megaman.Levels.Level lvl in this.Levels)
             {
                 pos = rom.PointerToOffset(lvl.EnemyPointerOffset, 0x18010);
-                lvl.Enemies = new Collection<Enemy>();
+                lvl.Enemies = new Collection<MegamanData.Megaman.Enemies.Enemy>();
                 while (rom[pos] < 0xFF)
                 {
-                    enemy = new Enemy();
+                    enemy = new MegamanData.Megaman.Enemies.Enemy();
                     enemy.ScreenID = rom[pos];
                     enemy.X = rom[pos + 1];
                     enemy.Y = rom[pos + 2];

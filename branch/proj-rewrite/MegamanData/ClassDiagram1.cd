@@ -1,53 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="MegamanData.Megaman.Enemy" Collapsed="true">
+  <Class Name="MegamanData.Megaman.Enemies.Enemy" Collapsed="true">
     <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAgEAAAACAAAAAAAAAAAAAAAAQAAAAYAA=</HashCode>
-      <FileName>Megaman\Enemy.cs</FileName>
+      <FileName>Megaman\Enemies\Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MegamanData.Megaman.Level">
+  <Class Name="MegamanData.Megaman.Levels.Level">
     <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>GDBgALkgQkgBdACCkQQgBCYKghVGIGBALQ7AAIRAiAA=</HashCode>
-      <FileName>Megaman\Level.cs</FileName>
+      <HashCode>GCBgwCigQgAAfACCMWwABCQKgoVEYGJSJQfBAIRAiQA=</HashCode>
+      <FileName>Megaman\Levels\Level.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MegamanData.Megaman.Statistic" Collapsed="true">
     <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAgAI=</HashCode>
-      <FileName>Megaman\Statistics.cs</FileName>
+      <FileName>Megaman\Statistics\Statistics.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MegamanData.Megaman.PatternTableSettings" Collapsed="true">
+  <Class Name="MegamanData.Megaman.Graphics.PatternTableSettings" Collapsed="true">
     <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>Megaman\PatternTableSettings.cs</FileName>
+      <FileName>Megaman\Graphics\PatternTableSettings.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MegamanData.Megaman.SoundEffect" Collapsed="true">
     <Position X="5.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>Megaman\SoundEffect.cs</FileName>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAQCAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Megaman\Music\SoundEffect.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MegamanData.Megaman.SpecialObject" Collapsed="true">
     <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABCAAgAAAAAADAEAAAIABAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Megaman\SpecObj.cs</FileName>
+      <FileName>Megaman\Objects\SpecObj.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MegamanData.Megaman.MegamanROM">
     <Position X="4" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>SoSCEmhEmAACRAAUAxAQAhCBghGlGATTgQEQiAKUCFI=</HashCode>
+      <HashCode>SoSCEmhEmAACRAAUAxAQAhCDghGlGATTgQEQCAKUCFI=</HashCode>
       <FileName>Megaman\MegamanROM.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="MegamanData.Megaman.Project.ProjectManager" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Megaman\Project\ProjectManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Tahoma" Size="8.25" />
 </ClassDiagram>

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MegamanData.Megaman
+namespace MegamanData.Megaman.Graphics
 {
     /// <summary>
     /// Class that represents the data that decides what to load into the pattern table.

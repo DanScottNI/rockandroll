@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MegamanData.Megaman
+namespace MegamanData.Megaman.Enemies
 {
     /// <summary>
     /// A class that represents statistics related to enemies.
