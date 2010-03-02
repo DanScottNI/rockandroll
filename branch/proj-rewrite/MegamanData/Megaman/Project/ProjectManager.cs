@@ -7,6 +7,9 @@ using ROMHackLib.Project;
 
 namespace MegamanData.Megaman.Project
 {
+    /// <summary>
+    /// Class that manages projects.
+    /// </summary>
     public class ProjectManager : IXMLProject
     {
         #region IXMLProject Members
