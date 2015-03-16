@@ -1,0 +1,1 @@
+Rock and Roll is a project for the creation of level editors for the Mega Man games on the NES.  They will be written in C#. Utilizes the ROMHackLibs project (http://code.google.com/p/romhacklibs/)
